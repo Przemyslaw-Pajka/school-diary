@@ -1,11 +1,12 @@
 import logo from './logo.svg';
-import './App.css';
+import './styles/main.scss'
+import MainRouter from './components/MainRouter'
 
 function App() {
   return (
-    <div>
-      Strona testowa
-    </div>
+    <>
+      <MainRouter/>
+    </>
   );
 }
 

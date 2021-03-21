@@ -1,0 +1,28 @@
+.create-user-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+  
+  legend {
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+  label {
+    font-weight: 800;
+  }
+  input,select {
+    margin-bottom: 10px;
+  }
+  button {
+    background-color: #037e03;
+    color: #fff;
+    border: 0px;
+    font-size: 22px;
+    width: 50%;
+    padding: 10px 0;
+    cursor: pointer;
+    &:hover {
+        background-color: #108b91;
+    }
+  }
+}
