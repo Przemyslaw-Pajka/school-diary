@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import verifyAdminPassword from '../utilities/veryifyAdminPassword'
+import verifyAdminPassword from '../utilities/verifyAdminPassword'
 import CreateNewUserForm from './CreateNewUserForm'
 
 const Admin = () => {
