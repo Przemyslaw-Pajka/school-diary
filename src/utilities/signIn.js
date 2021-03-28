@@ -1,9 +1,12 @@
 import verifyDataToLogIn from './verifyDataToLogIn'
-const signIn = (event) => {
+import { useHistory } from 'react-router-dom';
+const signIn = (event,routeChange) => {
     event.preventDefault();
- 
-    const isSomeone = verifyDataToLogIn()
-  isSomeone? console.log("ZALOGOWANO") : console.log("BŁĘDNE DANE LOGOWANIA")
+
+    let user = verifyDataToLogIn();
+    user = user.length == 0? false : user;
+
+    user? routeChange(user) : console.log("BŁĘDNE DANE LOGOWANIA")
 }
 
 export default signIn;

@@ -1,9 +1,23 @@
 import React from 'react';
 import signIn from '../utilities/signIn'
+import {useHistory} from 'react-router-dom'
 
-const Homepage = () => {
+const Homepage = (props) => {
+  const history = useHistory();
+    
+  const routeChange = (user) =>{ 
+    let path;
+    if(user.accountType.includes("Uczeń"))
+      path = '/uczen'
+    else if(user.accountType.includes("Nauczyciel"))
+      path = '/nauczyciel'
+
+   
+    history.push(path);
+  }
+
     return (
-      <form className="login-form" onSubmit={signIn}>
+      <form className="login-form" onSubmit={(event)=>signIn(event,routeChange)}>
           <legend>Panel logowania</legend>
           <label htmlFor="user-id">Wpisz ID:</label>
           <input id="user-id" type="number"/>

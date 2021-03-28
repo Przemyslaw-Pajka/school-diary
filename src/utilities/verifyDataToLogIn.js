@@ -7,10 +7,14 @@ const verifyDataToLogIn = () => {
     const userDataEnteredByUser = {
         id: document.getElementById('user-id').value,
         password: document.getElementById('user-password').value
+    
     }
-    return users.some(user => {
-        return ((user.id == userDataEnteredByUser.id && user.password == userDataEnteredByUser.password) ? true :  false)
+    const user = users.filter(user => {
+        if (user.id == userDataEnteredByUser.id && user.password == userDataEnteredByUser.password) {
+            return user
+        }
     })
+    return user[0]
 }
 
 export default verifyDataToLogIn;
