@@ -1,0 +1,36 @@
+{
+    "biologia":{
+        "Anna Kowalska": {
+            "oceny": [4,4,3,2,5],
+            "srednia": "Funkcja"
+        },
+        "Karolina Nowak": {
+            "oceny": [1,1,3,4,5],
+            "srednia": "Funkcja"
+        }
+    },
+    "matematyka":{
+        "Anna Kowalska": {
+            "oceny": [5,5,5,4,4],
+            "srednia": "Funkcja"
+        },
+        "Karolina Nowak": {
+            "oceny": [3,5,4,4,3],
+            "srednia": "Funkcja"
+        }
+    }
+}
+
+LUB 
+{
+    "Anna Kowalska" : {
+        "biologia": {
+            "oceny": [4,4,3,2,5],
+            "srednia": "Funkcja"
+        },
+        "matematyka": {
+            "oceny": [5,5,5,4,4],
+            "srednia": "Funkcja"
+        }
+    }
+}

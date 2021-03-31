@@ -1,9 +1,7 @@
 import React from 'react';
 import createNewUser from '../utilities/createNewUser'
-
+import schoolSubjects from '../schoolSubjects.json'
 const CreateNewUserForm = () => {
-    const schoolSubjects = ["biologia","chemia","fizyka","geografia","historia","informatyka","j.angielski","j.polski","j.niemiecki","matematyka","religia","wos"];
-        
     return (
        <form className="create-user-form" onSubmit={createNewUser}>
            <legend>Rejestracja nowego użytkownika</legend>
