@@ -1,8 +1,7 @@
 import React from 'react';
 import {
     BrowserRouter as Router,
-    Route,
-    useHistory
+    Route
   } from "react-router-dom";
 import Admin from './Admin'
 import Homepage from './Homepage'

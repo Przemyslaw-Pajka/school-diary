@@ -1,17 +1,21 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom'
+import logOut from '../utilities/logOut'
 
 const Student = () => {
+    const history = useHistory();
     const user = JSON.parse(sessionStorage.getItem('login'))
     let studentJournal = JSON.parse(localStorage.getItem('studentJournal')).filter(item => {
         return item.id === user.id;
     });
-    studentJournal= studentJournal[0]
-    console.log(Object.entries(studentJournal.subjects))
+    studentJournal = studentJournal[0]
+
+
     return (
         <>
             <div className="user-panel">
                 Cześć <span className="user-panel__user-name">{`${studentJournal.nameSurname}`}</span>
-                <button className="user-panel__logout-btn">Wyloguj</button>
+                <button className="user-panel__logout-btn" onClick={()=>logOut(history)}>Wyloguj</button>
             </div>
             <table>
             <thead>
