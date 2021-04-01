@@ -1,11 +1,11 @@
 const saveNewUserToDB = (newUser,newStudent) => {
     let users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [] ;
-    let studentJournal = localStorage.getItem('studentJournal') ? JSON.parse(localStorage.getItem('studentJournal')) : {} ;
+    let studentJournal = localStorage.getItem('studentJournal') ? JSON.parse(localStorage.getItem('studentJournal')) : [] ;
 
     users.push(newUser)
     
     if(newUser.accountType==="Uczeń"){
-        studentJournal = Object.assign(studentJournal,{...newStudent})
+        studentJournal.push(newStudent)
     }
     
     localStorage.setItem('studentJournal',JSON.stringify(studentJournal))

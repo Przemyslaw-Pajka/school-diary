@@ -1,3 +1,48 @@
+table,
+td {
+    border: 1px solid #000;
+}
+td {
+  border-bottom: none;
+  border-left: none;
+}
+table {
+  tr{
+    &:first-of-type {
+      td {
+        border-top: none;
+      }
+    }
+  }
+}
+th {
+  padding: 0.4rem 3rem;
+}
+.subject-name {
+  padding: 0.6rem 1rem;
+  text-align: center;
+}
+.subject-average {
+  border-right: none;
+}
+.subject-grades {
+  min-width: 400px;
+  &__square {
+    display: inline-flex;
+    background-color: green;
+    margin: 5px;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
 .create-user-form,.login-form {
     display: flex;
     flex-direction: column;
@@ -24,5 +69,22 @@
     &:hover {
         background-color: #108b91;
     }
+  }
+}
+
+.user-panel{
+  font-size: 1.5rem;
+  &__user-name {
+    color: green;
+  }
+  &__logout-btn {
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: block;
+    color: red;
+    padding: 5px;
+    margin: 1rem 0 2rem;
+    font-weight: 700;
+    border: 2px solid #000;
   }
 }

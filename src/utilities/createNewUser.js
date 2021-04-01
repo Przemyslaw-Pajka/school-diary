@@ -17,7 +17,9 @@ const createNewUser = (event) => {
             return Object.assign(prev,{[current] : {oceny: [],srednia: null}})
         },{})
         newStudent = {
-            [newUser.name + ' ' + newUser.surname]: {...allSubjects}
+            id: newUser.id,
+            nameSurname: `${newUser.name} ${newUser.surname}`,
+            subjects: {...allSubjects}
         }
     }
   

@@ -1,0 +1,24 @@
+[
+    {
+        "id": 3213131,
+        "user":"Egon Kowalski",
+        "subjects":{
+            "biologia": {"oceny": [], "srednia": null},
+            "chemia": {"oceny": [], "srednia": null},
+            "fizyka": {"oceny": [], "srednia": null},
+            "geografia": {"oceny": [], "srednia": null},
+            "historia": {"oceny": [], "srednia": null}
+        }
+    },
+    {
+        "id": 5646546,
+        "user":"Marta Nowak",
+        "subjects":{
+            "biologia": {"oceny": [], "srednia": null},
+            "chemia": {"oceny": [], "srednia": null},
+            "fizyka": {"oceny": [], "srednia": null},
+            "geografia": {"oceny": [], "srednia": null},
+            "historia": {"oceny": [], "srednia": null}
+        }
+    }
+]
