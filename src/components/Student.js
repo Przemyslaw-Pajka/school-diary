@@ -10,21 +10,20 @@ const Student = () => {
     });
     studentJournal = studentJournal[0]
 
-
     return (
         <>
             <div className="user-panel">
-                Cześć <span className="user-panel__user-name">{`${studentJournal.nameSurname}`}</span>
+                Cześć <span className="user-panel__user-name">{`${user.name} ${user.surname}`}</span>
                 <button className="user-panel__logout-btn" onClick={()=>logOut(history)}>Wyloguj</button>
             </div>
             <table>
-            <thead>
-                <tr>
-                    <th>Przedmiot</th>
-                    <th>Oceny</th>
-                    <th>Średnia</th>
-                </tr>
-            </thead>
+                <thead>
+                    <tr>
+                        <th>Przedmiot</th>
+                        <th>Oceny</th>
+                        <th>Średnia</th>
+                    </tr>
+                </thead>
                 {Object.entries(studentJournal.subjects).map((subject,index)=>{
                     return (
                         <tr key={index}>
