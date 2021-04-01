@@ -38,8 +38,8 @@ const Teacher = () => {
                     )
                 })}
             </table>
-            <div className="adding-box">
-                <p>Dodawanie ocen</p>
+            <form className="adding-box">
+                <legend>Dodawanie ocen</legend>
                 <select className="adding-box__student-name">
                     {studentJournal.map((student,index)=>{
                         return(<option key={index} value={`${student.id}`}>{`${student.nameSurname}`}</option>)
@@ -53,7 +53,8 @@ const Teacher = () => {
                     <option value="5">5</option>
                     <option value="6">6</option>
                 </select>
-            </div>
+                <button>Dodaj ocenę</button>
+            </form>
         </>
     );
 }
