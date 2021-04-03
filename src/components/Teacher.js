@@ -8,8 +8,28 @@ const Teacher = () => {
     const user = JSON.parse(sessionStorage.getItem('login'))
     const subject = user.accountType.split(' ')[1];
     const studentJournal = JSON.parse(localStorage.getItem('studentJournal'));
+    
+    const addGrade = (event) =>{
+        event.preventDefault()
+        const newGrade = {
+            grade: document.getElementById('adding-box__grades').value,
+            studentID: document.getElementById('adding-box__student-name').value
+        }
+        const wanted = studentJournal.filter((student)=>{
+            return student.id == newGrade.studentID;
+        })
+       
+        wanted[0].subjects[subject].oceny.push(parseInt(newGrade.grade))
+        const newStudentJournal = studentJournal.map((student,index)=>{
+            if(student.id == newGrade.studentID)
+            student = wanted[0]
 
-    console.log(studentJournal)
+            return student;
+        })
+        console.log(newStudentJournal)
+        localStorage.setItem('studentJournal',JSON.stringify(newStudentJournal));
+
+    }
     return (
         <>
            <div className="user-panel">
@@ -38,14 +58,14 @@ const Teacher = () => {
                     )
                 })}
             </table>
-            <form className="adding-box">
+            <form className="adding-box" onSubmit={addGrade}>
                 <legend>Dodawanie ocen</legend>
-                <select className="adding-box__student-name">
+                <select className="adding-box__student-name" id="adding-box__student-name">
                     {studentJournal.map((student,index)=>{
-                        return(<option key={index} value={`${student.id}`}>{`${student.nameSurname}`}</option>)
+                        return(<option key={index} value={`${student.id}`}>{`${student.nameSurname}`} {`(${student.id})`}</option>)
                     })}
                 </select>
-                <select className="adding-box__grades">
+                <select className="adding-box__grades" id="adding-box__grades">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
