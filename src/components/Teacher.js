@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom'
 import logOut from '../utilities/logOut'
-import Student from './Student';
+import addGrade from '../utilities/addGrade'
 import SubjectGradesSquare from './SubjectGradesSquare'
 
 const Teacher = () => {
@@ -10,27 +10,6 @@ const Teacher = () => {
     const subject = user.accountType.split(' ')[1];
     const studentJournal = JSON.parse(localStorage.getItem('studentJournal'));
     
-    const addGrade = (event) =>{
-        event.preventDefault()
-        const newGrade = {
-            grade: document.getElementById('adding-box__grades').value,
-            studentID: document.getElementById('adding-box__student-name').value
-        }
-        const wanted = studentJournal.filter((student)=>{
-            return student.id == newGrade.studentID;
-        })
-       
-        wanted[0].subjects[subject].oceny.push(parseInt(newGrade.grade))
-        const newStudentJournal = studentJournal.map((student,index)=>{
-            if(student.id == newGrade.studentID)
-            student = wanted[0]
-
-            return student;
-        })
-        console.log(newStudentJournal)
-        localStorage.setItem('studentJournal',JSON.stringify(newStudentJournal));
-
-    }
     return (
         <>
            <div className="user-panel">
@@ -57,7 +36,7 @@ const Teacher = () => {
                     )
                 })}
             </table>
-            <form className="adding-box" onSubmit={addGrade}>
+            <form className="adding-box" onSubmit={(event)=>addGrade(event,studentJournal,subject)}>
                 <legend>Dodawanie ocen</legend>
                 <select className="adding-box__student-name" id="adding-box__student-name">
                     {studentJournal.map((student,index)=>{
