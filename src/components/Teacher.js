@@ -17,6 +17,7 @@ const Teacher = () => {
         });
     }, [])
 
+ 
     return (
         <>
            <div className="user-panel">
@@ -38,7 +39,7 @@ const Teacher = () => {
                             <td className="subject-grades">
                                 <SubjectGradesSquare subject={student.subjects[subject]}/>
                             </td>
-                            <td className="subject-average"></td>
+                            <td className="subject-average">{student.subjects[subject].srednia}</td>
                         </tr>
                     )
                 })}
