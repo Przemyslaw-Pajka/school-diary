@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom'
 import logOut from '../utilities/logOut'
-
+import SubjectGradesSquare from './SubjectGradesSquare'
 const Student = () => {
     const history = useHistory();
     const user = JSON.parse(sessionStorage.getItem('login'))
@@ -29,10 +29,7 @@ const Student = () => {
                         <tr key={index}>
                             <td className="subject-name">{subject[0]}</td>
                             <td className="subject-grades">
-                                <span className="subject-grades__square">4</span>
-                                <span className="subject-grades__square">3</span>
-                                <span className="subject-grades__square">5</span>
-                                <span className="subject-grades__square">5</span>
+                                <SubjectGradesSquare subject={subject[1]}/>
                             </td>
                             <td className="subject-average">{subject[1].srednia}</td>
                         </tr>

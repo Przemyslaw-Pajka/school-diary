@@ -6,6 +6,21 @@ td {
   border-bottom: none;
   border-left: none;
 }
+.red-grade{
+  background-color: #ff0000;
+}
+.orange-grade {
+  background-color: #ffa500;
+}
+.yellow-grade{
+background-color: #ffff00;
+}
+.lightgreen-grade{
+background-color: #adff2f;
+}
+.green-grade{
+  background-color: #008000;
+}
 table {
   tr{
     &:first-of-type {
@@ -29,7 +44,6 @@ th {
   min-width: 400px;
   &__square {
     display: inline-flex;
-    background-color: green;
     margin: 5px;
     width: 25px;
     height: 25px;

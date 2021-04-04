@@ -2,6 +2,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom'
 import logOut from '../utilities/logOut'
 import Student from './Student';
+import SubjectGradesSquare from './SubjectGradesSquare'
 
 const Teacher = () => {
     const history = useHistory();
@@ -49,9 +50,7 @@ const Teacher = () => {
                         <tr key={index}>
                             <td className="subject-name">{student.nameSurname}</td>
                             <td className="subject-grades">
-                                {student.subjects[subject].oceny.map((grade)=>{
-                                    return (<span className="subject-grades__square">{grade}</span>)
-                                })}
+                                <SubjectGradesSquare subject={student.subjects[subject]}/>
                             </td>
                             <td className="subject-average"></td>
                         </tr>
