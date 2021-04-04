@@ -15,7 +15,11 @@ const addGrade = (event,studentJournal,subject) =>{
 
         return student;
     })
+    
     localStorage.setItem('studentJournal',JSON.stringify(newStudentJournal));
+    var event = document.createEvent("Event");
+    event.initEvent("storage", true, true);
+    window.dispatchEvent(event);
 }
 
 export default addGrade;

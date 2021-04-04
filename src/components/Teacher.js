@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import {useHistory} from 'react-router-dom'
 import logOut from '../utilities/logOut'
 import addGrade from '../utilities/addGrade'
@@ -8,8 +8,15 @@ const Teacher = () => {
     const history = useHistory();
     const user = JSON.parse(sessionStorage.getItem('login'))
     const subject = user.accountType.split(' ')[1];
-    const studentJournal = JSON.parse(localStorage.getItem('studentJournal'));
+    const [studentJournal,setStudentJournal] = useState(JSON.parse(localStorage.getItem('studentJournal')));
     
+
+    useEffect(() => {
+        window.addEventListener('storage', () => {
+          setStudentJournal(JSON.parse(localStorage.getItem('studentJournal')) || [])   
+        });
+    }, [])
+
     return (
         <>
            <div className="user-panel">
