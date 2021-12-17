@@ -1,0 +1,31 @@
+table,
+td {
+  border: 1px solid #000;
+}
+td {
+  border-bottom: none;
+  border-left: none;
+}
+table {
+  tr {
+    &:first-of-type {
+      td {
+        border-top: none;
+      }
+    }
+  }
+}
+th {
+  padding: 0.4rem 3rem;
+}
+
+thead,
+tfoot {
+  background-color: #363636;
+  color: #fff;
+}
+
+tbody {
+  background-color: #fff;
+  color: #000;
+}
