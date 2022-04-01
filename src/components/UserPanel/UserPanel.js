@@ -1,6 +1,6 @@
-import { logOut } from "../../utilities/logOut"
 import { useHistory } from "react-router";
-import { UserPanelStyled, UserName, LogoutBtn } from "./styles/UserPanelStyled";
+import { User } from '../../classes/Persons';
+import { LogoutBtn, UserName, UserPanelStyled } from "./styles/UserPanelStyled";
 
 export const UserPanel = () => {
     const history = useHistory();
@@ -9,7 +9,7 @@ export const UserPanel = () => {
     return (
         <UserPanelStyled>
             Cześć <UserName>{user.name} {user.surname}</UserName>
-            <LogoutBtn onClick={() => logOut(history)}>Wyloguj</LogoutBtn>
+            <LogoutBtn onClick={() => User.logOut(history)}>Wyloguj</LogoutBtn>
         </UserPanelStyled>
     )
 }

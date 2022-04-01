@@ -1,1 +1,0 @@
-export const getUserIfCorrectDataLogin = (users, dataForm) => users.find(user => user.id === dataForm.userID && user.password === dataForm.password)
