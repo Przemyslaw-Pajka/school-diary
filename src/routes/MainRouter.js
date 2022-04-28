@@ -14,10 +14,10 @@ export const MainRouter = () => {
             <Route path="/admin" component={Admin} />
             <Route path="/uczen" component={Student} />
             <Route path="/nauczyciel" component={Teacher} />
-            <Route exact path="/">
+            <Route exact path='/home' component={Home} />
+            <Route exact path="/" component={Home}>
                 <Redirect to="/home" />
             </Route>
-            <Route exact path='/home' component={Home} />
         </Router>
     );
 };
